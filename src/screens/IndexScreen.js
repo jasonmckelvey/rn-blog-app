@@ -57,4 +57,14 @@ const IndexScreen = ({ navigation }) => {
   );
 };
 
+IndexScreen.navigationOptions = ({ navigation }) => {
+  return {
+    headerRight: (
+      <TouchableOpacity onPress={() => navigation.navigate("Create")}>
+        <Feather name="plus" size={24} style={{ marginRight: 16 }} />
+      </TouchableOpacity>
+    )
+  };
+};
+
 export default IndexScreen;
