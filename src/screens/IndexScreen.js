@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import {
   FlatList,
   View,
@@ -28,7 +28,12 @@ const styles = StyleSheet.create({
 });
 
 const IndexScreen = ({ navigation }) => {
-  const { state, deleteBlogPost } = useContext(Context);
+  const { state, deleteBlogPost, getBlogPost } = useContext(Context);
+
+  useEffect(() => {
+    getBlogPost();
+  }, []);
+
   return (
     <View>
       <FlatList
