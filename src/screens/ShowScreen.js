@@ -21,7 +21,11 @@ const ShowScreen = ({ navigation }) => {
 ShowScreen.navigationOptions = ({ navigation }) => {
   return {
     headerRight: (
-      <TouchableOpacity onPress={() => navigation.navigate("Edit")}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("Edit", { id: navigation.getParam("id") })
+        }
+      >
         <Feather name="edit" size={24} style={{ marginRight: 16 }} />
       </TouchableOpacity>
     )

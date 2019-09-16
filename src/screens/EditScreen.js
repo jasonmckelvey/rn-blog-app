@@ -4,10 +4,10 @@ import { Context } from "../context/BlogContext";
 import { Feather } from "@expo/vector-icons";
 
 const styles = StyleSheet.create({});
-const EditScreen = () => {
+const EditScreen = ({ navigation }) => {
   return (
     <View>
-      <Text>Edit</Text>
+      <Text>Edit - {navigation.getParam("id")}</Text>
     </View>
   );
 };
