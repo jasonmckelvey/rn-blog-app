@@ -46,4 +46,11 @@ const BlogPostForm = ({ onSubmit, initialValues }) => {
   );
 };
 
+BlogPostForm.defaultProps = {
+  initialValues: {
+    title: "",
+    content: ""
+  }
+};
+
 export default BlogPostForm;
