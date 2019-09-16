@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { View, Text, TextInput, StyleSheet, Button } from "react-native";
-import { Context } from "../context/BlogContext";
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -18,10 +17,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const BlogPostForm = ({ navigation }) => {
+const BlogPostForm = ({ onSubmit }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const { addBlogPost } = useContext(Context);
 
   return (
     <View style={styles.wrapper}>
@@ -43,7 +41,7 @@ const BlogPostForm = ({ navigation }) => {
           onChangeText={text => setContent(text)}
         />
       </View>
-      <Button title="Save Blog Post" />
+      <Button title="Save Blog Post" onPress={() => onSubmit(title, content)} />
     </View>
   );
 };
